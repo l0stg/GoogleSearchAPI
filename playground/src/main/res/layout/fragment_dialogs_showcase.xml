@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:clipToPadding="false"
+        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="system dialog" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialogCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="compat dialog" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialogDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="system date" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialogTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="system time" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialogAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="system alert" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialogCompatAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="compat alert" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialogMtAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="material alert" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialogMtCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="material date" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialogMtTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="material time" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDialogBottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bottomsheet" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

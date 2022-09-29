@@ -1,0 +1,157 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ColorBaseAppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowBackground">@color/brand_white</item>
+
+        <!--
+        colorPrimary colors map to components and elements, such as app bars and buttons.
+        colorPrimaryDark color of the status bar and contextual app bars. But may be useless if using "immersive" system bars.
+        colorPrimaryVariant darker or lighter version of colorPrimary. Idk where it is used.
+        colorSecondary colors are most often used as accents on components, such as FABs and selection controls.
+        colorSecondaryVariant darker or lighter version of colorSecondary. Idk where it is used.
+        colorAccent deprecated, use colorSecondary instead. Used in old progressbar etc.
+        colorSurface is mapped to the surface of components such as cards, sheets and menus.
+        colorPrimarySurface is mapped to the surface of components such as toolbar and appbarlayout.
+        colorBackground appears behind scrollable content and is used for the default window background.
+        colorError is used to indicate an error state for components such as text fields.
+        -->
+        <!---->
+        <item name="colorPrimary">@color/brand_blue</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorPrimaryVariant">@color/brand_blue_dark</item>
+        <item name="colorAccent">@color/brand_orange</item>
+        <item name="colorSecondary">@color/brand_orange</item>
+        <item name="colorSecondaryVariant">@color/brand_orange_dark</item>
+        <item name="colorSurface">@color/brand_white</item>
+        <item name="colorPrimarySurface">@color/brand_blue_surface</item>
+        <item name="android:colorBackground">@color/brand_background</item>
+        <item name="colorError">@color/brand_red</item>
+
+        <!--
+        "On" colors define how text, icons and strokes are colored in relation to the surface on which they appear.
+        -->
+        <item name="colorOnPrimary">@color/brand_white</item>
+        <item name="colorOnSecondary">@color/brand_white</item>
+        <item name="colorOnBackground">@color/brand_on_background</item>
+        <item name="colorOnError">@color/brand_white</item>
+        <item name="colorOnSurface">@color/brand_black</item>
+        <item name="colorOnPrimarySurface">@color/brand_black</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="ColorBaseAppTheme">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="q">false</item>
+
+        <!-- Text Colors -->
+        <item name="android:textColorPrimary">?colorOnSurface</item>
+        <item name="android:textColorPrimaryInverse">?colorOnPrimary</item>
+        <item name="android:textColorSecondary">?colorOnBackground</item>
+        <item name="android:textColorSecondaryInverse">?colorOnPrimary</item>
+        <item name="android:textColorTertiary">?android:textColorSecondary</item>
+        <item name="android:textColorTertiaryInverse">?android:textColorSecondaryInverse</item>
+        <item name="android:textColorHint">?android:textColorSecondary</item>
+        <item name="android:textColorHintInverse">?android:textColorSecondaryInverse</item>
+        <item name="android:textColorLink">?colorPrimary</item>
+        <item name="android:textColorLinkInverse">?colorPrimary</item>
+
+        <!-- Typography -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.AppTheme.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.AppTheme.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.AppTheme.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.AppTheme.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.AppTheme.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.AppTheme.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.AppTheme.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.AppTheme.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.AppTheme.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.AppTheme.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.AppTheme.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.AppTheme.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.AppTheme.Overline</item>
+
+
+        <!--
+        Material shape attributes
+        SmallComponent uses in Button, TextInputLayout, Chip, item in NavigationView, MaterialCalendar.Item, FloatingActionButton (has overlay) and maybe somewhere else.
+        MediumComponent uses in ShapeableImageView, MaterialCalendar, CardView, Picker.Date.Spinner, Picker.Date.Calendar, MaterialAlertDialog and maybe somewhere else.
+        LargeComponent uses in BottomSheet(has overlay), maybe navigationdrawer and maybe somewhere else.
+        -->
+        <item name="shapeAppearanceSmallComponent">
+            @style/ShapeAppearance.AppTheme.SmallComponent
+        </item>
+        <item name="shapeAppearanceMediumComponent">
+            @style/ShapeAppearance.AppTheme.MediumComponent
+        </item>
+        <item name="shapeAppearanceLargeComponent">
+            @style/ShapeAppearance.AppTheme.LargeComponent
+        </item>
+
+        <!--Components -->
+        <!-- !!! to right colors needs add in layout style="?toolbarStyle" -->
+        <item name="toolbarStyle">@style/Widget.AppTheme.MaterialComponents.Toolbar</item>
+        <item name="appBarLayoutStyle">
+            @style/Widget.AppTheme.MaterialComponents.AppBarLayout
+        </item>
+        <item name="bottomNavigationStyle">@style/Widget.AppTheme.BottomNavigationView</item>
+
+        <!-- MaterialButtons -->
+        <item name="materialButtonStyle">@style/Widget.AppTheme.MaterialButton</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.AppTheme.MaterialButton.Outlined
+        </item>
+        <item name="imageButtonStyle">@style/Widget.AppTheme.ImageButton.Unelevated</item>
+        <item name="android:imageButtonStyle">@style/Widget.AppTheme.ImageButton.Unelevated</item>
+
+        <!-- Dialogs -->
+        <item name="android:dialogTheme">@style/ThemeOverlay.AppTheme.Dialog</item>
+        <item name="dialogTheme">@style/ThemeOverlay.AppTheme.Dialog</item>
+        <item name="android:alertDialogTheme">
+            @style/ThemeOverlay.AppTheme.Dialog.Alert.Framework
+        </item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.AppTheme.Dialog.Alert</item>
+        <item name="materialAlertDialogTheme">
+            @style/ThemeOverlay.AppTheme.MaterialAlertDialog
+        </item>
+
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.AppTheme.BottomSheetDialog</item>
+
+        <item name="android:datePickerDialogTheme">
+            @style/ThemeOverlay.AppTheme.Dialog.Picker.Framework
+        </item>
+        <item name="android:timePickerDialogTheme">
+            @style/ThemeOverlay.AppTheme.Dialog.Picker.Framework
+        </item>
+
+        <item name="materialCalendarTheme">@style/ThemeOverlay.AppTheme.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">
+            @style/ThemeOverlay.AppTheme.MaterialCalendar.Fullscreen
+        </item>
+        <item name="materialCalendarStyle">@style/Widget.AppTheme.MaterialCalendar</item>
+
+        <item name="materialTimePickerTheme">@style/ThemeOverlay.AppTheme.MaterialTimePicker</item>
+
+        <!--
+        Also u can override this style attributes
+        "android:buttonBarButtonStyle", "android:contextPopupMenuStyle", "appBarLayoutStyle",
+        "badgeStyle", "borderlessButtonStyle", "bottomAppBarStyle", "bottomNavigationStyle",
+        "buttonBarButtonStyle", "checkboxStyle", "chipGroupStyle", "chipStandaloneStyle",
+        "chipStyle", "extendedFloatingActionButtonStyle", "floatingActionButtonStyle",
+        "listPopupWindowStyle", "materialButtonOutlinedStyle", "materialButtonStyle",
+        "materialButtonToggleGroupStyle", "materialCardViewStyle", "navigationViewStyle",
+        "popupMenuStyle", "radioButtonStyle", "sliderStyle", "snackbarButtonStyle", "snackbarStyle",
+        "snackbarTextViewStyle", "switchStyle", "tabStyle", "textInputStyle", "toolbarStyle"
+
+        Or just check parent themes
+        -->
+
+        <!-- Specific App Styles -->
+        <item name="colorDivider">@color/brand_divider</item>
+        <item name="colorSurfaceOnSurface">@color/brand_background</item>
+    </style>
+
+</resources>

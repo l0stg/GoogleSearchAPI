@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="sign_in">Войти</string>
+    <string name="auth_phone_checking">Подтверждение</string>
+
+    <string name="auth_phone_number">Номер телефона</string>
+    <string name="auth_code_sent_format">На указаный номер %s мы отправили СМС-код, введите его</string>
+    <string name="auth_resend_code_format">Отправить код повторно %s</string>
+    <string name="auth_resend_code">Отправить код повторно</string>
+    <string name="auth_input_phone_hint">Введите номер телефона</string>
+    <string name="auth_wrong_code">Код не верный, проверьте введенные цифры или отправьте новый код</string>
+    <string name="auth_confirm">Подтвердить</string>
+    <string name="auth_input_login_hint">Введите логин</string>
+    <string name="auth_input_pass_hint">Введите пароль</string>
+</resources>

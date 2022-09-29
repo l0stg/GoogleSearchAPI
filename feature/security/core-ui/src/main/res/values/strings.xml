@@ -1,0 +1,28 @@
+<resources>
+    <string name="security_settings_title">Настройка авторизации</string>
+    <string name="security_settings_pincode">Вход по код-паролю</string>
+    <string name="security_settings_biometric">Вход по Fingerprint</string>
+    <string name="security_settings_suggest_msg">Нельзя включить Fingerprint без установки кода доступа. Хотите установить?</string>
+    <string name="security_settings_suggest_positive">Установить</string>
+
+    <string name="security_fingerprint_title">Fingerprint</string>
+    <string name="security_fingerprint_content_title">Используйте Fingerprint</string>
+    <string name="security_fingerprint_content_desc">Вы можете использовать Fingerprint для входа в приложение</string>
+    <string name="security_fingerprint_action_accept">Использовать</string>
+    <string name="security_fingerprint_action_cancel">Не сейчас</string>
+
+    <string name="security_check_title">Введите код-пароль</string>
+    <string name="security_check_wrong_code">Введен неверный код</string>
+
+    <string name="security_barrier_wrong_code">Введен неверный код</string>
+    <string name="security_barrier_logout">Выйти</string>
+
+    <string name="security_pincode_title">Код-пароль</string>
+
+    <string name="security_create_title_create">Придумайте код-пароль</string>
+    <string name="security_create_title_repeat">Повторите код-пароль</string>
+    <string name="security_create_wrong_code">Код доступа не совпадает, повторите попытку</string>
+
+    <string name="security_biometric_title">Подтвердите свою личность</string>
+    <string name="security_biometric_desc">Используйте отпечатки пальцев для проверки личности</string>
+</resources>

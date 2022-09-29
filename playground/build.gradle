@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion app_compile_sdk_version
+    buildToolsVersion app_buildtools_version
+
+    defaultConfig {
+        applicationId "com.mintrocket.playground"
+        minSdkVersion app_min_sdk_version
+        targetSdkVersion app_target_sdk_version
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    // Common
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    // App common
+    implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
+
+    // Design
+    implementation "com.google.android.material:material:$material_version"
+
+    // Ui tools
+    implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewbindingpropertydelegate_version"
+
+    implementation(project(":core:datacore"))
+    implementation(project(":core:uicore"))
+    implementation(project(":data"))
+    implementation(project(":mobile"))
+}

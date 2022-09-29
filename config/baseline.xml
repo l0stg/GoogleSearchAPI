@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues>
+    <ID>EqualsAlwaysReturnsTrueOrFalse:Model.kt$PageTrigger$// intentionally broken override fun equals(other: Any?)</ID>
+    <ID>EqualsAlwaysReturnsTrueOrFalse:Trigger.kt$Trigger$override fun equals(other: Any?)</ID>
+    <ID>EqualsWithHashCodeExist:Trigger.kt$Trigger</ID>
+    <ID>ReturnCount:OrientationAwareRecyclerView.kt$OrientationAwareRecyclerView$override fun onInterceptTouchEvent(e: MotionEvent): Boolean</ID>
+    <ID>SpreadOperator:BaseNavigator.kt$BaseNavigator$(*screens)</ID>
+    <ID>SpreadOperator:TextContainer.kt$TextContainer$(text, *args.toTypedArray())</ID>
+  </ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>MagicNumber:EditTextCode.kt$EditTextCode$10F</ID>
+    <ID>MagicNumber:EditTextCode.kt$EditTextCode$20F</ID>
+    <ID>MagicNumber:EditTextCode.kt$EditTextCode$30F</ID>
+    <ID>MagicNumber:EditTextCode.kt$EditTextCode$4</ID>
+    <ID>MagicNumber:EditTextCode.kt$EditTextCode$500</ID>
+    <ID>MagicNumber:EditTextCode.kt$EditTextCode$6</ID>
+    <ID>MagicNumber:EditTextCode.kt$EditTextCode.&lt;no name provided&gt;$500</ID>
+    <ID>UnusedPrivateMember:EditTextCode.kt$EditTextCode$private fun drawDots(canvas: Canvas)</ID>
+    <ID>UnusedPrivateMember:EditTextCode.kt$EditTextCode$private val textPaint = Paint().apply { color = Color.BLACK textSize = 24.dpToPx.toFloat() }</ID>
+  </CurrentIssues>
+</SmellBaseline>

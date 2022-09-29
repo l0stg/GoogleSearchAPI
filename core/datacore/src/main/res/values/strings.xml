@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_core_no_internet">Отсутствует интернет-соединение</string>
+    <string name="data_core_common_error_title">Ошибка</string>
+    <string name="data_core_network_error">Ошибка сети</string>
+    <string name="data_core_unknown_exception">Неизвестная ошибка</string>
+    <string name="data_core_wrong_code">Неверный код подтверждения</string>
+    <string name="data_phone_not_registered">Указанный номер не зарегестрирован</string>
+    <string name="data_core_phone_registered_error">Указанный номер уже зарегестрирован</string>
+    <string name="data_core_auth_required_error">Необходима авторизация</string>
+    <string name="data_core_wrong_credentials">Неверный логин или пароль</string>
+</resources>

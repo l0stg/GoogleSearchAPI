@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="BaseAppTheme" />
+
+    <style name="Theme.SplashScreen.Color" parent="Theme.SplashScreen">
+        <item name="colorPrimary">@color/brand_blue</item>
+    </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen.Color">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splashscreen_logo_animated</item>
+        <item name="windowSplashScreenAnimationDuration">2147483647</item>
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
+        <item name="android:windowSplashScreenBrandingImage" tools:targetApi="s">
+            @drawable/ic_splashscreen_branding_centered
+        </item>
+    </style>
+
+</resources>

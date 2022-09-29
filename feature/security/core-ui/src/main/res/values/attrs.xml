@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PinDotsView">
+        <attr name="pinSize" format="dimension" />
+        <attr name="pinGap" format="dimension" />
+        <attr name="pinBackground" format="reference" />
+    </declare-styleable>
+</resources>

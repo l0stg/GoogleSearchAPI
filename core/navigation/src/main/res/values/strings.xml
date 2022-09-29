@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">navigation</string>
+    <string name="invalid_url">Неверный формат ссылки</string>
+    <string name="retry">Повторить</string>
+</resources>

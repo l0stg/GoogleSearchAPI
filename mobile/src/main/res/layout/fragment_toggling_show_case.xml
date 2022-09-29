@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Image visible if feature enabled" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFeatureImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:srcCompat=" @drawable/ic_logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Button visible if feature enabled" />
+
+    <Button
+        android:id="@+id/btFeature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="feature button" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

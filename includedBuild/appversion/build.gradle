@@ -1,0 +1,25 @@
+buildscript {
+    ext {
+        kotlin_version = "1.6.10"
+    }
+}
+
+plugins {
+    id("base")
+    id("java-gradle-plugin")
+    id "org.jetbrains.kotlin.jvm" version "$kotlin_version"
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+gradlePlugin {
+    // Add fake plugin, if you don't have any
+    plugins.register("app.include.build.appversion") {
+        id = "app.include.build.appversion"
+        implementationClass = "app.include.build.appversion.FakeAppVersionPlugin"
+    }
+}

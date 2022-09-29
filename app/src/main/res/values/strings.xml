@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">GoogleSearchAPI</string>
+    <string name="app_name">Base project</string>
+    <string name="debug_screen_title">Дебаг панель</string>
+    <string name="debug_open_debug_screen">Открыть дебаг панель</string>
+    <string name="debug_screen_features_title">Features</string>
+    <string name="debug_screen_environment_title">Environment</string>
+    <string name="debug_screen_console_title">Console</string>
+    <string name="debug_feature_state_default">Default</string>
+    <string name="debug_feature_state_enabled">Enabled</string>
+    <string name="debug_feature_state_disabled">Disabled</string>
+    <string name="debug_feature_section_local">Local features</string>
+    <string name="debug_feature_section_remote">Remote features</string>
 </resources>

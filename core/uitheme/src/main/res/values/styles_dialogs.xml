@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- BottomSheetDialog -->
+    <style name="ThemeOverlay.AppTheme.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.AppTheme.BottomSheet.Modal</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <!-- Override button style if needed -->
+        <!--<item name="materialButtonStyle">@style/Widget.AppTheme.MaterialButton</item>-->
+    </style>
+
+    <style name="Widget.AppTheme.BottomSheet.Modal" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <!-- Needs for "stable" top corners -->
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+        <item name="shapeAppearance">@null</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+
+    <!-- Dialog -->
+    <style name="ThemeOverlay.AppTheme.Dialog" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <!-- Override button style if needed -->
+        <!--<item name="materialButtonStyle">@style/Widget.AppTheme.MaterialButton</item>-->
+    </style>
+
+    <!-- AlertDialog Framework -->
+    <style name="ThemeOverlay.AppTheme.Dialog.Alert.Framework" parent="ThemeOverlay.MaterialComponents.Light.Dialog.Alert.Framework">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+    </style>
+
+    <!-- AlertDialog -->
+    <style name="ThemeOverlay.AppTheme.Dialog.Alert" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+    </style>
+
+
+    <!-- MaterialAlertDialog -->
+    <style name="ThemeOverlay.AppTheme.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.AppTheme</item>
+        <item name="materialAlertDialogTitleTextStyle">
+            @style/MaterialAlertDialog.AppTheme.Title
+        </item>
+        <item name="materialAlertDialogBodyTextStyle">
+            @style/MaterialAlertDialog.AppTheme.Body
+        </item>
+    </style>
+
+    <style name="MaterialAlertDialog.AppTheme" parent="MaterialAlertDialog.MaterialComponents">
+        <item name="shapeAppearance">@style/ShapeAppearance.AppTheme.Dialog</item>
+    </style>
+
+    <style name="MaterialAlertDialog.AppTheme.Title" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textAppearance">?textAppearanceHeadline6</item>
+    </style>
+
+    <style name="MaterialAlertDialog.AppTheme.Body" parent="TextAppearance.AppTheme.Body1">
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+    </style>
+
+
+    <!-- Dialog Picker Framework -->
+    <style name="ThemeOverlay.AppTheme.Dialog.Picker.Framework" parent="ThemeOverlay.AppTheme.Dialog">
+        <item name="android:datePickerStyle">@style/Widget.AppTheme.DatePicker.Platform</item>
+        <item name="android:timePickerStyle">@style/Widget.AppTheme.TimePicker.Platform</item>
+        <item name="colorAccent">?colorPrimary</item>
+    </style>
+
+    <style name="Widget.AppTheme.DatePicker.Platform" parent="android:Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">?colorPrimary</item>
+    </style>
+
+    <style name="Widget.AppTheme.TimePicker.Platform" parent="android:Widget.Material.Light.TimePicker">
+        <item name="android:headerBackground">?colorPrimary</item>
+    </style>
+
+    <!-- MaterialCalendarTheme -->
+    <style name="ThemeOverlay.AppTheme.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="materialCalendarStyle">@style/Widget.AppTheme.MaterialCalendar</item>
+    </style>
+
+    <style name="Widget.AppTheme.MaterialCalendar" parent="Widget.MaterialComponents.MaterialCalendar">
+        <item name="shapeAppearance">@style/ShapeAppearance.AppTheme.Dialog</item>
+    </style>
+
+
+    <!-- MaterialCalendarTheme FullScreen-->
+    <style name="ThemeOverlay.AppTheme.MaterialCalendar.Fullscreen" parent="ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen">
+        <!--Your custom type style here-->
+    </style>
+
+
+    <!-- MaterialTimePickerTheme -->
+    <style name="ThemeOverlay.AppTheme.MaterialTimePicker" parent="ThemeOverlay.MaterialComponents.TimePicker">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+    </style>
+
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- add styles for Snackbar, Toolbar, AppBarLayout, etc. -->
+
+    <!-- Toolbar -->
+    <style name="Widget.AppTheme.MaterialComponents.Toolbar" parent="Widget.MaterialComponents.Toolbar.Surface">
+        <!--Your custom type style here-->
+    </style>
+
+    <!-- AppBarLayout -->
+    <style name="Widget.AppTheme.MaterialComponents.AppBarLayout" parent="Widget.MaterialComponents.AppBarLayout.Surface">
+        <!--Your custom type style here-->
+    </style>
+
+    <!-- BottomNavigationView -->
+    <style name="Widget.AppTheme.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+    </style>
+
+</resources>

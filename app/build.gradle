@@ -1,44 +1,161 @@
+import app.include.build.appversion.AppVersion
+
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
+    id("com.google.firebase.crashlytics")
+    id("com.google.firebase.appdistribution")
+    id("app.include.build.appversion")
 }
+apply from: '../jacoco.gradle'
 
 android {
-    namespace 'com.example.googlesearchapi'
-    compileSdk 32
+    compileSdkVersion app_compile_sdk_version
+    buildToolsVersion app_buildtools_version
+
+    def versionBuildFile = file('version.properties')
+    def isBuild = isBuild()
+    def appVersion = new AppVersion("BaseProjectApp", 0, 0, 1, versionBuildFile, isBuild)
 
     defaultConfig {
-        applicationId "com.example.googlesearchapi"
-        minSdk 24
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
-
+        applicationId 'com.mintrocket.baseproject'
+        minSdkVersion app_min_sdk_version
+        targetSdkVersion app_target_sdk_version
+        versionCode appVersion.versionCode()
+        versionName appVersion.baseVersionName()
+        setProperty("archivesBaseName", appVersion.archivesBaseName())
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "java.util.Date", 'BUILD_DATE', "new java.util.Date(" + System.currentTimeMillis() + "L)"
+
+        /*
+        * Production api url.
+        * Not recommend override in flavors.
+        * To test other api urls, add them in EnvironmentRepository and select in DebugScreen.
+        * */
+        buildConfigField "String", "BASE_URL", "\"https://mintrocket.prod.ru:8787/\""
     }
 
-    buildTypes {
+    signingConfigs {
+        // !!! Do note release app with this key.
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            storeFile file("../key/temp_key.jks")
+            storePassword '12345678'
+            keyAlias "key0"
+            keyPassword '12345678'
+        }
+        debug {
+            storeFile file("../key/temp_key.jks")
+            storePassword '12345678'
+            keyAlias "key0"
+            keyPassword '12345678'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    buildTypes {
+        release {
+            multiDexEnabled true
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            aaptOptions.cruncherEnabled = false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "tools"
+    productFlavors {
+        noTools {
+            dimension "tools"
+            buildConfigField "Boolean", "DEBUG_SCREEN_ENABLED", "false"
+        }
+        devTools {
+            dimension "tools"
+            versionNameSuffix appVersion.versionNameEnvironmentSuffix()
+            buildConfigField "Boolean", "DEBUG_SCREEN_ENABLED", "true"
+        }
+    }
+
+    testOptions {
+        animationsDisabled true
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+        unitTests {
+            all {
+                maxParallelForks = Runtime.runtime.availableProcessors()
+                forkEvery = 10
+            }
+        }
+    }
+
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 }
 
 dependencies {
+    // Common
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "com.jakewharton.timber:timber:$timber_version"
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // App common
+    implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidx_lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$androidx_lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$androidx_lifecycle_version"
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+
+    // Ui tools
+    implementation "com.mikepenz:fastadapter:$fastadapter_version"
+    implementation "com.mikepenz:fastadapter-extensions-diff:$fastadapter_version"
+    implementation "com.mikepenz:fastadapter-extensions-binding:$fastadapter_version"
+    implementation "ru.ldralighieri.corbind:corbind:$corbind_version"
+    implementation "ru.ldralighieri.corbind:corbind-recyclerview:$corbind_version"
+    implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewbindingpropertydelegate_version"
+
+    // Design
+    implementation "com.google.android.material:material:$material_version"
+
+    // Json
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+
+    // Modules
+    implementation(project(":core:datacore"))
+    implementation(project(":core:navigation"))
+    implementation(project(":core:uicore"))
+    implementation(project(":data"))
+    implementation(project(":mobile"))
+
+    // Tests
+    testImplementation "junit:junit:$junit_version"
+}
+
+apply plugin: 'com.google.gms.google-services'
+
+private Boolean isBuild() {
+    return gradle.getStartParameter().getTaskRequests().any {
+        it.args.any {
+            it.startsWith("assemble") || it.startsWith("bundle")
+        }
+    }
 }

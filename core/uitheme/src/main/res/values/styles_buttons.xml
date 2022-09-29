@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.AppTheme.MaterialButton" parent="Widget.MaterialComponents.Button">
+        <!--Your custom type style here-->
+    </style>
+
+    <style name="Widget.AppTheme.MaterialButton.Unelevated" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <!--Your custom type style here-->
+    </style>
+
+    <style name="Widget.AppTheme.MaterialButton.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <!--Your custom type style here-->
+    </style>
+
+    <style name="Widget.AppTheme.MaterialButton.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <!--Your custom type style here-->
+    </style>
+
+    <style name="Widget.AppTheme.MaterialButton.Icon.Unelevated" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+    </style>
+
+    <style name="Widget.AppTheme.ImageButton.Unelevated" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">?actionBarItemBackground</item>
+    </style>
+
+</resources>

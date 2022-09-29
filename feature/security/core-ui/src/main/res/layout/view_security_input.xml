@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:gravity="center_horizontal"
+        android:textAppearance="?textAppearanceBody1"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Введите код-пароль" />
+
+    <com.mintrocket.modules.security.core_ui.views.PinDotsView
+        android:id="@+id/pinDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/flow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        app:constraint_referenced_ids="btNum1, btNum2, btNum3, btNum4, btNum5, btNum6, btNum7, btNum8, btNum9, btBiometric, btNum0, btDelete"
+        app:flow_horizontalAlign="center"
+        app:flow_horizontalGap="24dp"
+        app:flow_maxElementsWrap="3"
+        app:flow_verticalGap="24dp"
+        app:flow_wrapMode="chain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pinDots"
+        app:layout_constraintVertical_bias="1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum1"
+        style="@style/PinNumberButton"
+        android:text="1"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum2"
+        style="@style/PinNumberButton"
+        android:text="2"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum3"
+        style="@style/PinNumberButton"
+        android:text="3"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum4"
+        style="@style/PinNumberButton"
+        android:text="4"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum5"
+        style="@style/PinNumberButton"
+        android:text="5"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum6"
+        style="@style/PinNumberButton"
+        android:text="6"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum7"
+        style="@style/PinNumberButton"
+        android:text="7"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum8"
+        style="@style/PinNumberButton"
+        android:text="8"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum9"
+        style="@style/PinNumberButton"
+        android:text="9"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btNum0"
+        style="@style/PinNumberButton"
+        android:text="0"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btBiometric"
+        style="@style/PinNumberButton"
+        android:visibility="invisible"
+        app:icon="@drawable/ic_fingerprint"
+        app:iconTint="?android:textColorPrimary"
+        app:strokeWidth="0dp"
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btDelete"
+        style="@style/PinNumberButton"
+        android:padding="0dp"
+        app:icon="@drawable/ic_backspace"
+        app:iconTint="?android:textColorPrimary"
+        app:strokeWidth="0dp"
+        tools:ignore="MissingConstraints" />
+
+</merge>

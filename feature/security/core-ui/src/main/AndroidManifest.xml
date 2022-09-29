@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mintrocket.modules.security.core_ui">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application android:theme="@style/BaseAppTheme">
+
+        <activity
+            android:name="com.mintrocket.modules.security.core_ui.screens.barrier.PinBarrierActivity"
+            android:launchMode="singleTask" />
+    </application>
+</manifest>

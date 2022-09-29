@@ -1,0 +1,39 @@
+image: jangrewe/gitlab-ci-android
+pipelines:
+  tags:
+    sub_release_*:
+      - step:
+          name: Build debug
+          caches:
+            - gradle
+          artifacts:
+            - app/build/outputs/apk/**
+          script:
+            - chmod +x gradlew
+            - ./gradlew assembleDebug
+
+  pull-requests:
+    '*/*': #any branch
+      - step:
+          name: Detekt code
+          caches:
+            - gradle
+          artifacts:
+            - config/detekt/destination.html
+          script:
+            - chmod +x gradlew
+            - ./gradlew detekt
+  custom:
+    custom-test:
+      - step:
+          name: Testing
+          caches:
+            - gradle
+          artifacts:
+            - app/build/reports/tests/testStagingDebugUnitTest/index.html
+            - data/build/reports/tests/testDebugUnitTest/index.html
+            - mobile/build/reports/tests/testDebugUnitTest/index.html
+          script:
+            - chmod +x test.sh
+            - chmod +x gradlew
+            - ./test.sh

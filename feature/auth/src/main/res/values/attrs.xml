@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="EditTextCode">
+        <attr name="dot_diameter" format="dimension" />
+        <attr name="dot_space" format="dimension" />
+        <attr name="dot_inactive_color" format="color" />
+        <attr name="dot_active_color" format="color" />
+        <attr name="dot_count" format="integer" />
+        <attr name="cell_default_stroke_color" format="color" />
+        <attr name="cell_error_stroke_color" format="color" />
+        <attr name="cell_width" format="dimension" />
+    </declare-styleable>
+</resources>

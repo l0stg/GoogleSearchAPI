@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">data</string>
+    <string name="data_monthly_subscription">На месяц</string>
+    <string name="data_annually_subscription">На год</string>
+
+    <string name="data_email_or_pass_incorrect">Email или пароль введены неверно</string>
+    <string name="data_user_not_verified">Вы не подтвердили свою регистрацию</string>
+    <string name="data_network_error">Ошибка сети</string>
+    <string name="data_no_internet">Отсутствует интернет-соединение</string>
+    <string name="data_user_blocked">Пользователь заблокирован</string>
+    <string name="data_user_already_exists">Пользователь с данным email уже существует</string>
+    <string name="data_authorization_required">Необходима авторизация</string>
+    <string name="data_unknown_exception">Неизвестная ошибка</string>
+    <string name="data_wrong_password">Неверный пароль</string>
+    <string name="data_premium_required">Для использования данного функционала необходима подписка</string>
+    <string name="data_common_error_title">Ошибка</string>
+</resources>

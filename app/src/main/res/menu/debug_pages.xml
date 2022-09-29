@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_debug_pager_features"
+        android:icon="@drawable/ic_debug_features"
+        android:title="@string/debug_screen_features_title" />
+
+    <item
+        android:id="@+id/menu_debug_pager_environment"
+        android:icon="@drawable/ic_debug_environment"
+        android:title="@string/debug_screen_environment_title" />
+
+    <item
+        android:id="@+id/menu_debug_pager_logreader"
+        android:icon="@drawable/ic_debug_console"
+        android:title="@string/debug_screen_console_title" />
+
+</menu>

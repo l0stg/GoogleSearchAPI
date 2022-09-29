@@ -1,0 +1,58 @@
+apply plugin: 'jacoco'
+
+def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*', '**/model/**', '**/di/**']
+def debugTreeCore = fileTree(dir: "$project.projectDir/build/tmp/kotlin-classes/debug", excludes: fileFilter)
+def debugTreeApp = fileTree(dir: "$project.projectDir/build/tmp/kotlin-classes/stagingDebug", excludes: fileFilter)
+def debugTreeMobile = fileTree(dir: "$project.projectDir/build/tmp/kotlin-classes/stagingDebug", excludes: fileFilter)
+def mainSrcCore = "$project.projectDir/src/main/java"
+def mainSrcApp = "$project.projectDir/src/main/java"
+def mainSrcMobile = "$project.projectDir/src/main/java"
+
+jacoco {
+    toolVersion = '0.8.4'
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
+}
+
+task jacocoTestReportData(type: JacocoReport, dependsOn: [':data:testDebugUnitTest']) {
+
+    reports {
+        html.enabled = true
+        html.destination file("${rootProject.buildDir}/reports/jacocoData")
+        csv.enabled = true
+        csv.destination file("${rootProject.buildDir}/reports/jacocoData.csv")
+    }
+
+    sourceDirectories.setFrom files([mainSrcCore])
+    classDirectories.setFrom files([debugTreeCore])
+    executionData.setFrom fileTree("${buildDir}/jacoco/testDebugUnitTest.exec")
+}
+
+task jacocoTestReportApp(type: JacocoReport, dependsOn: [':app:testStagingDebugUnitTest']) {
+    reports {
+        html.enabled = true
+        html.destination file("${rootProject.buildDir}/reports/jacocoApp")
+        csv.enabled = true
+        csv.destination file("${rootProject.buildDir}/reports/jacocoApp.csv")
+    }
+
+    sourceDirectories.setFrom files([mainSrcApp])
+    classDirectories.setFrom files([debugTreeApp])
+    executionData.setFrom fileTree("${buildDir}/jacoco/testStagingDebugUnitTest.exec")
+}
+
+task jacocoTestReportMobile(type: JacocoReport, dependsOn: [':mobile:testDebugUnitTest']) {
+    reports {
+        html.enabled = true
+        html.destination file("${rootProject.buildDir}/reports/jacocoApp")
+        csv.enabled = true
+        csv.destination file("${rootProject.buildDir}/reports/jacocoApp.csv")
+    }
+
+    sourceDirectories.setFrom files([mainSrcMobile])
+    classDirectories.setFrom files([debugTreeMobile])
+    executionData.setFrom fileTree("${buildDir}/jacoco/testDebugUnitTest.exec")
+}

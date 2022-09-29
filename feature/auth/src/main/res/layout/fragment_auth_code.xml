@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="?toolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/auth_phone_checking" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nvEnterPhone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/llEnterPhone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tvCodeSent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="start"
+                android:textAppearance="?textAppearanceBody2"
+                tools:text="На ваш номер отправлен код" />
+
+            <com.mintrocket.uicore.views.EditTextCodeV2
+                android:id="@+id/etCode"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="29dp"
+                android:background="@null"
+                android:inputType="numberDecimal"
+                android:textAppearance="?textAppearanceHeadline5"
+                app:auto_width="true"
+                app:cell_default_stroke_color="?colorOnSurface"
+                app:cell_error_color="?colorError"
+                app:cell_error_stroke_color="?colorError"
+                app:dot_space="12dp" />
+
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/auth_wrong_code"
+                android:textAppearance="?textAppearanceBody2"
+                android:textColor="?colorError"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvResendIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="31dp"
+                android:gravity="center_horizontal"
+                android:textAppearance="?textAppearanceBody1"
+                android:textColor="?android:textColorSecondary"
+                tools:text="Отправить код повторно 0:23" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/tvResendCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="31dp"
+                android:text="@string/auth_resend_code"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.mintrocket.uicore.views.OverlapProgressBar
+        android:id="@+id/progressEnterCode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="18dp"
+        android:text="@string/auth_confirm" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

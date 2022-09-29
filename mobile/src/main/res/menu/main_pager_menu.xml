@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_pager_one"
+        android:icon="@drawable/ic_menu_temp"
+        android:title="один" />
+
+    <item
+        android:id="@+id/menu_pager_two"
+        android:icon="@drawable/ic_menu_temp"
+        android:title="два" />
+
+    <item
+        android:id="@+id/menu_pager_three"
+        android:icon="@drawable/ic_menu_temp"
+        android:title="три" />
+
+    <item
+        android:id="@+id/menu_pager_four"
+        android:icon="@drawable/ic_menu_temp"
+        android:title="четыре" />
+
+    <item
+        android:id="@+id/menu_pager_five"
+        android:icon="@drawable/ic_menu_temp"
+        android:title="пять" />
+</menu>

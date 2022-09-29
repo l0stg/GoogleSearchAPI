@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!--
+        Must be something "brand_" + color name from figma
+    -->
+    <color name="brand_white">#ffffff</color>
+    <color name="brand_black">#000000</color>
+    <color name="brand_blue">#1E1FF3</color>
+    <color name="brand_blue_dark">#1515BF</color>
+    <color name="brand_blue_surface">#6262D9</color>
+    <color name="brand_orange">#F7B932</color>
+    <color name="brand_orange_dark">#DEA131</color>
+    <color name="brand_red">#C82217</color>
+    <color name="brand_green">#96E573</color>
+    <color name="brand_background">#F5F5F5</color>
+    <color name="brand_on_background">#AAAAAA</color>
+    <color name="brand_divider">#1A000000</color>
+
+    <color name="brand_gray_light">#9E9E9E</color>
+    <color name="brand_gray">#616161</color>
+    <color name="brand_gray_dark">#212121</color>
+    <color name="brand_blue_light">#2196F3</color>
+    <color name="brand_red_light">#ff5131</color>
+    <color name="brand_orange_light">#ffdd4b</color>
+    <color name="brand_indigo_light">#aab6fe</color>
+</resources>

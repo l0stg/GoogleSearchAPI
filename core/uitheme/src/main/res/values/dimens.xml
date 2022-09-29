@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="shape_corner_size_dialog">16dp</dimen>
+    <dimen name="shape_corner_size_bottom_sheet">16dp</dimen>
+    <dimen name="shape_corner_size_button">8dp</dimen>
+    <dimen name="shape_corner_size_card">18dp</dimen>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="Theme.SplashScreen.Color" parent="Theme.SplashScreen">
+        <item name="colorPrimary">@color/brand_blue_light</item>
+    </style>
+
+</resources>

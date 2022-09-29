@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="EditTextCodeV2">
+        <attr name="cell_space" format="dimension" />
+        <attr name="cell_count" format="integer" />
+        <attr name="cell_active_color" format="color" />
+        <attr name="cell_default_color" format="color" />
+        <attr name="cell_error_color" format="color" />
+        <attr name="cell_width" format="dimension" />
+        <attr name="cell_default_stroke_color" format="color" />
+        <attr name="cell_error_stroke_color" format="color" />
+        <attr name="auto_width" format="boolean" />
+    </declare-styleable>
+
+</resources>

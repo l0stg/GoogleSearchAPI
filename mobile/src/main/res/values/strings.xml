@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Base Project</string>
+
+    <string name="all_loading_error">Ошибка загрузки</string>
+    <string name="all_end_of_list">Конец списка</string>
+    <string name="all_more_posts">Больше итемов</string>
+
+    <!-- Feature auth -->
+    <string name="auth_agreements_format">Нажимая кнопку «Войти», вы даёте согласие на %s и принимаете %s</string>
+    <string name="auth_data_processing">Обработку персональных данных</string>
+    <string name="auth_privacy_policy">Политику конфиденциальности</string>
+
+    <!--in_app_update-->
+    <string name="in_app_update_error">Не удалось обновить приложение. Повторите попытку при следующем запуске приложения.</string>
+    <string name="in_app_update_success">Обновление загружено.</string>
+    <string name="in_app_update_restart">УСТАНОВИТЬ</string>
+    <string name="in_app_update_cancel">ОТМЕНА</string>
+</resources>

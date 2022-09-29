@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Show Case</string>
+    <string name="feature_auth_with_phone_and_code">Авторизация по номеру телефона</string>
+    <string name="feature_auth_with_login_and_pass">Автоизация по логину и паролю</string>
+
+    <!-- Feature auth -->
+    <string name="auth_agreements_format">Нажимая кнопку «Войти», вы даёте согласие на %s и принимаете %s</string>
+    <string name="auth_data_processing">Обработку персональных данных</string>
+    <string name="auth_privacy_policy">Политику конфиденциальности</string>
+    <string name="feature_authentication">Авторизация</string>
+    <string name="auth_input_email_hint">Введите email</string>
+    <string name="auth_input_correct_email">Введите корректный email</string>
+    <string name="auth_login_or_pass_incorrect">Неверный логин или пароль</string>
+
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="item_debug_feature_toggle" type="id" />
+    <item name="item_debug_feature_section" type="id" />
+    <item name="item_debug_log_line" type="id" />
+    <item name="item_debug_environment" type="id" />
+    <item name="item_debug_environment_add" type="id" />
+</resources>
