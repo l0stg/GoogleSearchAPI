@@ -23,23 +23,17 @@ import com.mintrocket.uicore.observeEvent
 import com.mintrocket.uicore.recycler.UniversalDecorator
 import com.mintrocket.uicore.withArgs
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ContentListFragment : Fragment(R.layout.fragment_content_list) {
 
     companion object {
-        private const val EXTRA_TITLE = "extra_title"
         private const val CONTENT_ITEM_HORIZONTAL_OFFSET = 16
         private const val CONTENT_ITEM_VERTICAL_OFFSET = 16
-
-        fun newInstance(title: String) = ContentListFragment().withArgs(
-            EXTRA_TITLE to title
-        )
     }
 
-    private val viewModel by scopeViewModel<ContentListViewModel>()
     private val itemsBuilder by inject<ContentItemsBuilder>()
-
-    private val title by extraNotNull<String>(EXTRA_TITLE)
+    private val viewModel by inject<ContentListViewModel>()
     private val contentAdapter = ItemAdapter<GenericItem>()
     private val loadingMoreAdapter = ItemAdapter<GenericItem>()
     private val fastAdapter = FastAdapter.with(contentAdapter)
@@ -56,7 +50,6 @@ class ContentListFragment : Fragment(R.layout.fragment_content_list) {
     }
 
     private fun initView() {
-        binding.toolbar.title = title
 
         binding.rvMain.apply {
             adapter = fastAdapter

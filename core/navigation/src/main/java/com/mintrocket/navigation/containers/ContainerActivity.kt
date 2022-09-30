@@ -21,8 +21,6 @@ abstract class ContainerActivity : AppCompatActivity(), NavigatorContainer {
 
     abstract val navigatorHolder: AppNavigatorHolder
 
-    abstract fun getSnackBarContainer(): ViewGroup
-
     private var shownDialog: AlertDialog? = null
 
     override fun onResume() {
@@ -69,32 +67,4 @@ abstract class ContainerActivity : AppCompatActivity(), NavigatorContainer {
         toast(text.getTextValue(this))
     }
 
-    override fun showSnackBar(
-        text: TextContainer,
-        actionText: TextContainer?,
-        action: (() -> Unit)?,
-        dismissAction: (() -> Unit)?
-    ) {
-        val snackbar = Snackbar.make(
-            getSnackBarContainer(), text.getTextValue(this), Snackbar.LENGTH_SHORT
-        )
-
-        action?.let {
-            snackbar.setAction(actionText?.getTextValue(this)) { _ -> it.invoke() }
-        }
-
-        dismissAction?.let {
-            snackbar.addCallback(object : Snackbar.Callback() {
-                override fun onDismissed(
-                    transientBottomBar: Snackbar?,
-                    event: Int
-                ) {
-                    super.onDismissed(transientBottomBar, event)
-                    it.invoke()
-                }
-            })
-        }
-
-        snackbar.show()
-    }
 }

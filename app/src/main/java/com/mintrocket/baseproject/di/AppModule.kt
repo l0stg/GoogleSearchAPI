@@ -11,7 +11,6 @@ import com.mintrocket.baseproject.debug_screen.logreader.data.LogReaderRepositor
 import com.mintrocket.data.api.ApiUrlProvider
 import com.mintrocket.data.api.ApiUrlProviderImpl
 import com.mintrocket.datacore.AppBuildConfig
-import com.mintrocket.mobile.InputValidator
 import com.mintrocket.navigation.ScreenResultsBuffer
 import com.mintrocket.navigation.navigator.ApplicationNavigator
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -22,7 +21,6 @@ val appModule = module {
     single<AppBuildConfig> { AppBuildConfigImpl() }
 
     single { ApplicationNavigator() }
-    single { InputValidator() }
     single { ScreenResultsBuffer() }
 
     single {

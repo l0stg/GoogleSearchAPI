@@ -1,7 +1,6 @@
 package com.mintrocket.modules.auth.core_ui.di
 
 
-import com.mintrocket.modules.auth.core_ui.AuthFeature
 import com.mintrocket.modules.auth.core_ui.AuthFeatureConfig
 import com.mintrocket.modules.auth.core_ui.AuthTypeConfig
 import com.mintrocket.modules.auth.core_ui.data.local.SentCodeDataSource
@@ -30,12 +29,7 @@ val authFeatureModule = module {
         )
     }
 
-    factory {
-        AuthFeature(
-            config = get(),
-            router = get()
-        )
-    }
+
 
     factory {
         get<AuthFeatureConfig>()

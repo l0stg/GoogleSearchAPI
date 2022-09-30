@@ -1,8 +1,6 @@
 rootProject.name='Base Project'
 includeBuild("includedBuild/appversion")
-include ':showcase'
 include ':mobile'
-include ':playground'
 include ':app', ':data', ':core:testcore', ':core:navigation', ':core:uicore', ':core:datacore'
 include ':feature:security:core', ':feature:security:core-ui', ':feature:security:example'
 include ':feature:auth'

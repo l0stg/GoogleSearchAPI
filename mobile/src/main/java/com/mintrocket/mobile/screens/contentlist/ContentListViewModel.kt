@@ -15,7 +15,6 @@ import kotlinx.coroutines.flow.onEach
 
 class ContentListViewModel(
     private val contentRepository: ContentRepository,
-    private val navigator: ScopedNavigator
 ) : ViewModel() {
 
     companion object {
@@ -37,12 +36,6 @@ class ContentListViewModel(
 
     val progress = postsLoadingFlow.initialProgressFlow()
         .toLiveData(viewModelScope.coroutineContext)
-
-    init {
-        postsLoadingFlow.initialLoadingErrorsFlow()
-            .onEach { navigator.handleError(it) }
-            .launchIn(viewModelScope)
-    }
 
     fun allPosts(): LiveData<List<ContentPost>> = postsLoadingFlow
         .allItemsFlow()

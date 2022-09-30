@@ -32,19 +32,6 @@ sealed class AuthTypeConfig {
     ) : AuthTypeConfig()
 }
 
-class AuthFeature(
-    private val config: AuthFeatureConfig,
-    private val router: IAuthRouter
-) {
 
-    fun runAuthFlow() {
-        router.openFragmentAsHome {
-            when (config.authTypeConfig) {
-                is AuthTypeConfig.PhoneAndCode -> EnterPhoneFragment()
-                is AuthTypeConfig.LoginAndPass -> LoginPassAuthFragment()
-            }
-        }
-    }
-}
 
 data class AuthLegal(val id: String, @StringRes val nameRes: Int)
